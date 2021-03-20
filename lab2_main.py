@@ -68,7 +68,6 @@ def intro_process():
                 box.showerror(title="Ошибка", message="Вы ввели слишком много чисел!")
             else:
                 flag = 0
-                print(massive)
                 for i in massive:
                     if not (it_is_a_number(i.strip())):
                         flag = 1
@@ -78,10 +77,6 @@ def intro_process():
                 else:
                     mas_s = bubble_sort([int(x) for x in massive])
                     randout_small.insert(0, ', '.join([str(mas_s[i]) for i in range(st)]))
-
-
-# 1, 5, 7, 10, -2, 1, 1
-print(bubble_sort([1, 5, 7, 10, -2, 1, 1]))
 
 
 def callback(input):
@@ -181,7 +176,7 @@ def main_process():
             write_result(ordered_time, random_time, reversed_time, i)
 
 
-window = tk.Tk()
+window = tk.Tk()  # cоздание окна
 window.geometry("400x400")
 window.title("Измерение времени сортировок")
 
@@ -194,14 +189,14 @@ intro.grid(column=0, columnspan=4)
 choose_size_small = tk.Label(text="Введите размер массива (до 10):")
 choose_size_small.grid(column=0, row=2)
 
-enter_small = tk.Entry(width=30)
+enter_small = tk.Entry(width=30) # поле для ввода исх. массива
 enter_small.grid(column=1, row=2, columnspan=4)
 enter_small.config(validate='key', validatecommand=(window.register(callback), '%P'))
 
 input_small = tk.Label(text="Введите массив чисел через запятую:")
 input_small.grid(columnspan=4)
 
-rand_small = tk.Entry(width=60)
+rand_small = tk.Entry(width=60) # после для вывода отсортированного массива
 rand_small.grid(columnspan=4)
 
 btn1 = tk.Button(text="Попробовать метод на маленьком массиве", command=lambda: intro_process())
