@@ -66,7 +66,7 @@ all_sprites.add(cloud2)
 cloud3 = Cloud(250, 170, "cloud.png")
 all_sprites.add(cloud3)
 
-generator = Generator(185, 230, "generator.png")
+generator = Generator(185, 235, "generator.png")
 all_sprites.add(generator)
 
 
